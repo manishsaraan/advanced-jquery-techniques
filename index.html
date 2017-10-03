@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery functions</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="div1">
+		<p>Results</p>
+	</div>
+	<hr/>
+	<div id="div2"></div>
+	<script>
+		$(function(){
+			var div1 = $("#div1");
+			var div2 = $("#div2");
+			function1 = function(){
+				div1.append("function1 exicuted<br>");
+			};
+			var function2  = function(){
+				div1.append("function2 exicuted<br>");
+			};
+			var obj = {
+				function3 : function(){
+					div1.append("function3 exicuted<br>");
+				}
+			};
+			gobj = {
+				function4 : function(){
+					div1.append("function4 exicuted<br>");
+				}
+			};
+			function1();
+			function2();
+			obj.function3();
+			gobj.function4();
+			div1.append('<br/>');
+			div2.load('second.html');
+
+		})
+	</script>
+</body>
+</html>

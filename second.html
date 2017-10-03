@@ -1,0 +1,32 @@
+<script>
+	$(function(){
+		$body = $('body');
+		if(typeof function1 === undefined){
+			$body.append('function1 is not found<br>');
+		}
+		else{
+			function1();
+		}
+
+		if(typeof function2 === undefined){
+			$body.append('function2 is not found<br>');
+		}
+		else{
+			function2();
+		}
+
+		if(typeof obj !== undefined && typeof obj.function3 !== undefined){			
+			obj.function3();
+		}
+		else{
+			$body.append('function3 is not found<br>');
+		}
+
+		if(typeof gobj !== undefined && typeof gobj.function4 !== undefined){			
+			gobj.function4();
+		}
+		else{
+			$body.append('function4 is not found<br>');
+		}
+	})
+</script>
