@@ -5,7 +5,7 @@
 		#theCanvas {background-image: -moz-radial-gradient(30px 30px, #FFF, #EEF);
 	</style>
 	<body>
-		<canvas id="theCanvas">
+		<canvas id="theCanvas" width="640" height="480">
 			Attention! Your browser does not support the Canvas.
 		</canvas>
 	</body>
@@ -13,7 +13,7 @@
 	
 	  //js for canvas goes here
 	  _KSM = {
-	  	draw: function(){
+	  	draw: function(left,top){
 
 	  		//draw on the canvas
 	  		var canvas = document.getElementById('theCanvas');
@@ -21,11 +21,16 @@
 	  			var context = canvas.getContext('2d');
 	  			context.strokeStyle = 'black';
 	  			context.fillStyle = 'silver';
-	  			context.fillRect(10, 10, 100, 100);
-	  			context.strokeRect(10, 10, 100, 100);
+	  			context.fillRect(left, top, 100, 100);
+	  			context.strokeRect(left, top, 100, 100);
 	  		}
 	  	}
 	  }
+
+	   //old code
 	  _KSM.draw();
+
+	  //new code
+	  _KSM.draw(530, 370);
 	</script>
 </html>
