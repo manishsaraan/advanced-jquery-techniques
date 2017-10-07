@@ -11,6 +11,10 @@
 			<h5 class="clickable">Work Area</h5>
 			<hr />
 			<input type="button" class="clickable" value="Click Me" />
+			<p class="clickable">Click Me Too!</p>
+			<p>This is some more text with an embeded
+               <span class="clickable">clickable</span> element
+			</p>
 		</div>
 		<div id="Messages" >
 			<h5>Messages</h5>
@@ -19,6 +23,7 @@
 	<script>
 		
 		$(function(){
+		
 			 var showEventMessage = function(options){		
 			  
 			     options = $.extend(
@@ -31,12 +36,18 @@
 			 	var message  = options.eventType + ":" +
 			 	               (options.eventTarget.nodeName || 'unknown') +
 			 	               options.suffix;
-			 	               console.log(message);
+			 	              
 			 	    $("#Messages").append(message);
 			 };
-			 $(".clickable").click(function(){
-
+			 $(".clickable").click(function(){                     
                showEventMessage.call(this,{suffix:'!<br>'});
+			 })
+			 .dblclick(function(){
+			 	showEventMessage.call(this,{eventType:'double click!'});
+			 })
+			 .mousedown(function(){
+			 	showEventMessage.call(this,{eventType:'mouse down'});
+			 	return false;
 			 });
 		})
 	</script>
